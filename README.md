@@ -38,6 +38,11 @@ La pista Sakhir se utilizará como escenario de las pruebas de navegación autó
 
 La implementación se organizará en etapas: preparación del entorno, configuración del mapa, programación del controlador, pruebas de conducción y evaluación del rendimiento.
 
+Se configuró el simulador F1TENTH en ROS 2 Humble, utilizando el mapa Sakhir para las pruebas de navegación autónoma.
+
+La siguiente captura muestra el entorno de simulación y el circuito que se utilizará durante la implementación del controlador Follow the Gap.
+
+![Simulador F1TENTH en Sakhir](img/simulador_sakhir.png)
 ## 6. Resultados
 
 *Se incorporarán las evidencias de simulación, los registros de vueltas, los tiempos y las observaciones obtenidas durante las pruebas.*
