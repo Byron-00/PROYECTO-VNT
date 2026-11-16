@@ -6,3 +6,28 @@ __pycache__/
 .pytest_cache/
 .vscode/
 .DS_Store
+
+# ROS 2 build outputs
+build/
+install/
+log/
+
+# Python generated files
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Previous controller backups
+*backup*.py
+*respaldo*.py
+*antes*.py
+*estable*.py
+/V5_*.py
+/gap_controller_V*.py
+
+# Editor files
+.vscode/
+.DS_Store
+Thumbs.db
