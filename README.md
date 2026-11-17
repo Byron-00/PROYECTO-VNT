@@ -290,29 +290,6 @@ controller, completed laps, and timing results.
 | `/ego_racecar/odom` | `nav_msgs/msg/Odometry` | Position and speed feedback |
 
 
-## 13. Future Work — Part 2
-
-The next stage will introduce additional obstacles to the Sakhir racing environment.
-
-Planned improvements include:
-
-- Obstacle detection and reactive avoidance.
-- Improved trajectory selection.
-- Faster cornering without collisions.
-- Additional racing performance evaluation.
-
-## 14. References
-
-- [F1TENTH Official Website](https://f1tenth.org/)
-- [F1TENTH Gym](https://github.com/f1tenth/f1tenth_gym)
-- [F1TENTH Gym ROS](https://github.com/f1tenth/f1tenth_gym_ros)
-- [ROS 2 Humble Documentation](https://docs.ros.org/en/humble/)
-
----
-
-**Developed by Byron Ortega — PROYECTO-VNT**
-
-
 ## Lap Counter and Timing Evidence
 
 ![Automatic lap counter and timing](media/lap-counter.png)
@@ -373,3 +350,53 @@ In RViz, add a **MarkerArray** display and select
 The visualization must be tested in the simulator
 to verify the trajectory, finish-line detection,
 and displayed lap times.
+
+## 13. References
+
+- [F1TENTH Official Website](https://f1tenth.org/)
+- [F1TENTH Gym](https://github.com/f1tenth/f1tenth_gym)
+- [F1TENTH Gym ROS](https://github.com/f1tenth/f1tenth_gym_ros)
+- [ROS 2 Humble Documentation](https://docs.ros.org/en/humble/)
+
+
+---
+
+# Part 2 — Competition Conditions
+
+Four different tracks from the F1TENTH simulator
+will be used in the competition.
+
+Each student will compete with their own reactive
+controller in the following two trials.
+
+## Trial 1 — Static Obstacle Challenge
+
+Five obstacles must be added to the assigned track.
+
+The autonomous robot must complete **10 consecutive
+laps without collisions** on the track containing
+the static obstacles.
+
+## Trial 2 — Dynamic Obstacle and Overtaking Challenge
+
+A second autonomous robot must be introduced
+into the simulation.
+
+The additional robot must start **5 meters ahead**
+of the original vehicle.
+
+During the race, the original robot must overtake
+the additional robot, which acts as a
+**dynamic obstacle**.
+
+Both robots must operate using the autonomous
+control algorithms developed during
+**Part 1 of the project**.
+
+Both robots must complete **10 consecutive laps
+without collisions** on the track assigned
+to their competition group.
+
+---
+
+**Developed by Byron Ortega — PROYECTO-VNT**
