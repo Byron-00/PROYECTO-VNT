@@ -220,7 +220,13 @@ The development process focused on reducing steering oscillation, improving corn
 
 **[Watch the Ten-Lap Racing Video](media/ten-laps.webm)**
 
-The evidence recording must display the vehicle, automatic lap counter, and lap-time output.
+Click the image below to watch the complete ten-lap demonstration on YouTube.
+
+[![Watch the Ten-Lap Racing Demonstration](media/racing-run.png)](https://www.youtube.com/watch?v=TFbscId3P24)
+
+▶ **[Watch the Full Racing Video on YouTube](https://www.youtube.com/watch?v=TFbscId3P24)**
+
+**[Download the Original Video (WebM, 85.9 MB)](media/ten-laps.webm)**
 
 ## 12. ROS 2 Topics
 
@@ -229,6 +235,7 @@ The evidence recording must display the vehicle, automatic lap counter, and lap-
 | `/scan` | `sensor_msgs/msg/LaserScan` | LiDAR input |
 | `/drive` | `ackermann_msgs/msg/AckermannDriveStamped` | Vehicle control |
 | `/ego_racecar/odom` | `nav_msgs/msg/Odometry` | Position and speed feedback |
+
 
 ## 13. Future Work — Part 2
 
