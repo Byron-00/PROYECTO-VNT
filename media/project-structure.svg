@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="844" viewBox="0 0 1200 844">
+<rect width="1200" height="844" fill="#0b1220"/>
+<rect x="25" y="25" width="1150" height="794" rx="16" fill="#172337"/>
+<text x="55" y="72" fill="#ffffff" font-family="sans-serif" font-size="30" font-weight="bold">PROJECT REPOSITORY STRUCTURE</text>
+<text x="60" y="117" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">PROYECTO-VNT/</text>
+<text x="60" y="151" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">|-- README.md</text>
+<text x="60" y="185" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">|-- docs/</text>
+<text x="60" y="219" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- CONTROLLER_TUTORIAL.md</text>
+<text x="60" y="253" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">|-- img/</text>
+<text x="60" y="287" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">|-- maps/</text>
+<text x="60" y="321" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- Sakhir_map.png</text>
+<text x="60" y="355" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- Sakhir_map.yaml</text>
+<text x="60" y="389" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">|-- media/</text>
+<text x="60" y="423" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- racing-run.png</text>
+<text x="60" y="457" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- sakhir-simulator.png</text>
+<text x="60" y="491" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- lap-counter.png</text>
+<text x="60" y="525" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">    |-- project-structure.svg</text>
+<text x="60" y="559" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">|-- src/</text>
+<text x="60" y="593" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">    |-- sakhir_gap_controller/</text>
+<text x="60" y="627" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">        |-- package.xml</text>
+<text x="60" y="661" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">        |-- setup.py</text>
+<text x="60" y="695" fill="#44d6e8" font-family="monospace" font-size="22" xml:space="preserve">        |-- sakhir_gap_controller/</text>
+<text x="60" y="729" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">            |-- gap_controller.py</text>
+<text x="60" y="763" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">            |-- lap_timer.py</text>
+<text x="60" y="797" fill="#e8eef7" font-family="monospace" font-size="22" xml:space="preserve">            |-- race_visualizer.py</text>
+</svg>

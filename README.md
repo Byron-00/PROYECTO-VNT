@@ -1,4 +1,49 @@
-# F1TENTH Autonomous Racing — Sakhir Circuit
+# First Midterm Project (Part 1) — F1TENTH Reactive Controller Competition
+
+<!-- ASSIGNMENT INTRO -->
+
+## General Description
+
+As part of the **Autonomous Vehicles** course, each
+student must individually develop a reactive
+**Follow the Gap** controller using the official
+F1TENTH simulator.
+
+The controllers are evaluated in a group racing
+competition, where autonomous navigation and
+vehicle performance are tested.
+
+The purpose of this project is to assess the
+implementation and performance of autonomous
+navigation algorithms in simulated environments,
+reinforcing the knowledge acquired during the course.
+
+**Project Value: 30 Points**
+
+## F1TENTH Environment Installation Tutorial
+
+To complete this project, the official F1TENTH
+simulation environment and the corresponding
+racing maps must be installed.
+
+The step-by-step installation guide is available
+in the following repository:
+
+**[F1TENTH Installation and Setup Tutorial](https://github.com/widegonz/F1Tenth-Repository)**
+
+## Sakhir Racing Implementation
+
+This repository documents the individual
+implementation of a Reactive Follow the Gap
+controller for autonomous racing on the Sakhir
+circuit using ROS 2 Humble.
+
+It includes the controller source code, project
+structure, technical explanation, lap counter,
+lap timer, experimental results, racing evidence,
+and an additional RViz visualization system.
+
+<!-- END ASSIGNMENT INTRO -->
 
 <p align="center">
   <img src="media/racing-run.png"
@@ -84,9 +129,13 @@ These improvements were developed to reduce steering oscillation and improve cor
 
 ## 5. Controller Code Structure
 
+![Project repository structure](media/project-structure.svg)
+
+
 | File | Purpose |
 |---|---|
 | `gap_controller.py` | Reactive navigation, steering, and speed control |
+| `race_visualizer.py` | RViz trajectory, race markers, speed, and floating telemetry |
 | `lap_timer.py` | Automatic lap detection and individual lap timing |
 | `setup.py` | ROS 2 Python package configuration |
 | `package.xml` | ROS 2 package metadata and dependencies |
@@ -174,10 +223,10 @@ source /opt/ros/humble/setup.bash
 source ~/PROYECTO-VNT/install/setup.bash
 
 ros2 run sakhir_gap_controller gap_controller --ros-args \
--p max_speed:=9.0 \
+-p max_speed:=8.0 \
 -p max_lateral_accel:=7.5 \
 -p brake_accel:=7.0 \
--p drive_accel:=8.5 \
+-p drive_accel:=7.0 \
 -p lookahead_base:=1.00 \
 -p lookahead_gain:=0.08 \
 -p bubble_radius:=0.30 \
@@ -218,15 +267,19 @@ The development process focused on reducing steering oscillation, improving corn
 
 ### Complete Ten-Lap Demonstration
 
-**[Watch the Ten-Lap Racing Video](media/ten-laps.webm)**
+The following video demonstrates autonomous
+racing on the Sakhir circuit, including
+the vehicle's performance and lap timing.
 
-Click the image below to watch the complete ten-lap demonstration on YouTube.
+Click the image to watch the complete
+demonstration on YouTube.
 
-[![Watch the Ten-Lap Racing Demonstration](media/racing-run.png)](https://www.youtube.com/watch?v=TFbscId3P24)
+[![Watch the F1TENTH Ten-Lap Demonstration](media/racing-run.png)](https://www.youtube.com/watch?v=TFbscId3P24)
 
-▶ **[Watch the Full Racing Video on YouTube](https://www.youtube.com/watch?v=TFbscId3P24)**
+**[▶ Watch the Full Racing Demonstration on YouTube](https://www.youtube.com/watch?v=TFbscId3P24)**
 
-**[Download the Original Video (WebM, 85.9 MB)](media/ten-laps.webm)**
+The video provides evidence of the racing
+controller, completed laps, and timing results.
 
 ## 12. ROS 2 Topics
 
@@ -263,3 +316,60 @@ Planned improvements include:
 ## Lap Counter and Timing Evidence
 
 ![Automatic lap counter and timing](media/lap-counter.png)
+
+## RViz Racing Visualization
+
+The project includes an additional ROS 2 node
+that provides real-time visualization of the
+vehicle's racing performance.
+
+### Racing Visualization Screenshot
+
+![RViz racing visualization](media/race-visualization.png)
+
+### Visualization Features
+
+- Green trajectory showing the vehicle's path.
+- Automatic trajectory clearing after each lap.
+- Virtual start/finish line on the circuit.
+- Floating telemetry following the vehicle.
+- Real-time speed in m/s and km/h.
+- Current lap number.
+- Current, previous, and best lap times.
+- Final ten-lap racing summary.
+
+### Technical Implementation
+
+**Source file:** `race_visualizer.py`
+
+**Subscribed topic:** `/ego_racecar/odom`
+
+**Published topic:** `/sakhir/race_markers`
+
+**Message type:** `visualization_msgs/msg/MarkerArray`
+
+The visualization node processes odometry data
+and displays trajectory, race markers, and
+telemetry information in RViz.
+
+It runs independently from the reactive
+controller and does not publish driving commands
+to `/drive`.
+
+### Running the RViz Visualization
+
+Open a new terminal after launching the simulator:
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/PROYECTO-VNT/install/setup.bash
+
+python3 ~/PROYECTO-VNT/src/sakhir_gap_controller/sakhir_gap_controller/race_visualizer.py
+```
+
+In RViz, add a **MarkerArray** display and select
+`/sakhir/race_markers`.
+
+The visualization must be tested in the simulator
+to verify the trajectory, finish-line detection,
+and displayed lap times.
