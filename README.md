@@ -361,42 +361,21 @@ and displayed lap times.
 
 ---
 
-# Part 2 — Competition Conditions
+# Part 2 — Static Obstacles and Autonomous Overtaking
 
-Four different tracks from the F1TENTH simulator
-will be used in the competition.
+The second stage of this project introduces
+five static obstacles and a second autonomous
+racing vehicle.
 
-Each student will compete with their own reactive
-controller in the following two trials.
+It focuses on reactive obstacle avoidance,
+safe overtaking, independent vehicle control,
+and advanced RViz telemetry.
 
-## Trial 1 — Static Obstacle Challenge
+The complete technical documentation,
+development process, screenshots, and
+experimental results are maintained in
+a separate README.
 
-Five obstacles must be added to the assigned track.
-
-The autonomous robot must complete **10 consecutive
-laps without collisions** on the track containing
-the static obstacles.
-
-## Trial 2 — Dynamic Obstacle and Overtaking Challenge
-
-A second autonomous robot must be introduced
-into the simulation.
-
-The additional robot must start **5 meters ahead**
-of the original vehicle.
-
-During the race, the original robot must overtake
-the additional robot, which acts as a
-**dynamic obstacle**.
-
-Both robots must operate using the autonomous
-control algorithms developed during
-**Part 1 of the project**.
-
-Both robots must complete **10 consecutive laps
-without collisions** on the track assigned
-to their competition group.
-
----
+### [View Part 2 — Complete Documentation](part2/README.md)
 
 **Developed by Byron Ortega — PROYECTO-VNT**
