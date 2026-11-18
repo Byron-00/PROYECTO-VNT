@@ -108,6 +108,40 @@ be marked as successful.
 
 ## 5. Static Obstacle Implementation
 
+### Original Sakhir Configuration
+
+The original Sakhir simulation was inspected
+before introducing obstacles.
+
+| Parameter | Value |
+|---|---|
+| Map | `Sakhir_map` |
+| Resolution | `0.05695 m/pixel` |
+| Active vehicles | `1` |
+| Initial vehicle position | `(0.0, 0.0)` |
+| Original map | Preserved |
+| Obstacle map | Working copy created |
+
+### Original Circuit
+
+![Original Sakhir circuit](../media/part2/01-baseline-sakhir.png)
+
+### Obstacle Map Preparation
+
+A separate working copy was created:
+
+- `maps/part2/Sakhir_obstacles.png`
+- `maps/part2/Sakhir_obstacles.yaml`
+
+The original map and simulator configuration
+remain unchanged.
+
+**Current status:** Map preparation completed.
+Obstacle placement and simulation validation
+are pending.
+
+
+
 This section will document:
 
 - Original map preservation.
