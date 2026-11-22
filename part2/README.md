@@ -156,6 +156,44 @@ This section will document:
 
 ---
 
+
+### First Static Obstacle — Initial Test
+
+A preliminary test was prepared using a modified
+copy of the original Sakhir occupancy map.
+
+The obstacle was placed on a straight section
+of the circuit using an interactive Python tool.
+
+**Implementation details:**
+
+- Original circuit: Sakhir
+- Obstacle type: Circular static obstacle
+- Obstacle radius: 0.20 m
+- Obstacle diameter: approximately 0.40 m
+- Map resolution: 0.05695 m/pixel
+- Number of obstacles in this test: 1
+
+**Generated files:**
+
+- `maps/part2/Sakhir_test_one.png`
+- `maps/part2/Sakhir_test_one.yaml`
+- `scripts/part2/create_test_obstacle.py`
+
+### Initial Simulation Screenshot
+
+![First obstacle in Sakhir](../media/part2/03-obstacle-lidar.png)
+
+The screenshot shows the modified Sakhir circuit
+with the first obstacle loaded into RViz.
+
+The original Sakhir map and the Part 1 controller
+were preserved.
+
+**Current status:** Obstacle placement and map
+visualization completed. LiDAR detection and
+collision-free avoidance remain to be validated.
+
 ## 6. Two-Vehicle Racing System
 
 This section will document:
