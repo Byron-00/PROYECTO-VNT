@@ -293,3 +293,42 @@ The detailed engineering log is available here:
 ---
 
 **Developed by Byron Ortega — PROYECTO-VNT**
+
+<!-- STATIC RACE EVIDENCE START -->
+
+## Static Obstacle Challenge — Ten-Lap Results
+
+### Autonomous Navigation — Lap 6
+
+The following screenshot shows the autonomous
+vehicle navigating the modified Sakhir circuit
+during its sixth lap, using the Reactive Follow
+the Gap controller developed in Part 1.
+
+![Autonomous racing during lap six](../media/part2/04-five-obstacles-rviz.png)
+
+### Ten Consecutive Laps Completed
+
+The vehicle successfully completed ten consecutive
+laps on the Sakhir circuit with five static obstacles.
+
+The terminal output below presents the automatic
+lap counter and the recorded lap times.
+
+![Ten-lap timing results](../media/part2/05-static-race-results.png)
+
+### Experimental Summary
+
+| Parameter | Result |
+|---|---|
+| Racing circuit | Sakhir |
+| Static obstacles | 5 |
+| Completed laps | 10 |
+| Controller | Reactive Follow the Gap V5 |
+| ROS 2 distribution | Humble |
+| Visualization | RViz trajectory and lap telemetry |
+
+The test provides evidence of ten completed laps
+on the modified racing circuit.
+
+<!-- STATIC RACE EVIDENCE END -->
