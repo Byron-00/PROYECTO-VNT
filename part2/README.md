@@ -281,3 +281,126 @@ the overtaking result.
 The following image shows the Part 2 directories and the shared controller package.
 
 ![Part 2 project folder structure](../media/part2/10-project-structure.png)
+
+---
+
+<!-- five-terminal-guide -->
+## 12. Running the Two-Vehicle Demonstration
+
+These commands assume that ROS 2 Humble and the F1TENTH simulator
+are installed, both workspaces have been built, and the simulator
+has been configured with the final map and two-vehicle starting poses.
+
+The paths below assume these workspace locations:
+
+- Simulator: `~/F1Tenth-Repository`
+- Project: `~/PROYECTO-VNT`
+
+Adapt the paths if your workspaces are stored elsewhere.
+
+### Startup Order
+
+Open five separate Ubuntu terminals. Run each block in its corresponding
+terminal and leave that process running.
+
+1. Start the simulator and wait until it is ready.
+2. Start both lap timers while the vehicles are stationary at their initial poses.
+3. Start the orange controller.
+4. Immediately start the blue controller, because the orange controller's timeout begins when it starts.
+
+### Terminal 1 — Simulator
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/F1Tenth-Repository/install/setup.bash
+ros2 launch f1tenth_gym_ros gym_bridge_launch.py
+```
+
+The simulator must load the final map and show both vehicles.
+If it loads a different configuration, correct that before continuing.
+
+### Terminal 2 — Blue Lap Timer
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/PROYECTO-VNT/install/setup.bash
+
+python3 ~/PROYECTO-VNT/src/sakhir_gap_controller/sakhir_gap_controller/lap_timer.py
+```
+
+### Terminal 3 — Orange Lap Timer
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/PROYECTO-VNT/install/setup.bash
+
+python3 ~/PROYECTO-VNT/src/sakhir_gap_controller/sakhir_gap_controller/lap_timer.py \
+  --ros-args \
+  -r /ego_racecar/odom:=/opp_racecar/odom \
+  -r __node:=lap_timer_orange
+```
+
+The odometry remapping makes this timer measure the orange vehicle independently.
+
+### Terminal 4 — Orange Controller
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/PROYECTO-VNT/install/setup.bash
+
+python3 ~/PROYECTO-VNT/src/sakhir_gap_controller/sakhir_gap_controller/orange_two_speed.py \
+  --ros-args \
+  -r __node:=orange_two_speed \
+  -r /scan:=/opp_scan \
+  -r /drive:=/opp_drive \
+  -r /ego_racecar/odom:=/opp_racecar/odom \
+  -p max_speed:=4.0 \
+  -p max_lateral_accel:=5.0 \
+  -p brake_accel:=7.0 \
+  -p drive_accel:=5.0 \
+  -p lookahead_base:=1.00 \
+  -p lookahead_gain:=0.08 \
+  -p bubble_radius:=0.30 \
+  -p gap_weight:=3.0
+```
+
+### Terminal 5 — Blue Controller
+
+```bash
+source /opt/ros/humble/setup.bash
+source ~/PROYECTO-VNT/install/setup.bash
+
+python3 ~/PROYECTO-VNT/src/sakhir_gap_controller/sakhir_gap_controller/blue_initial_pass.py \
+  --ros-args \
+  -r __node:=blue_initial_pass \
+  -p max_speed:=4.0 \
+  -p max_lateral_accel:=5.0 \
+  -p brake_accel:=7.0 \
+  -p drive_accel:=5.0 \
+  -p lookahead_base:=1.00 \
+  -p lookahead_gain:=0.08 \
+  -p bubble_radius:=0.30 \
+  -p gap_weight:=3.0
+```
+
+### Expected Result
+
+Orange initially moves slowly, allowing blue to attempt the initial overtake.
+After the maneuver, the vehicles continue with their normal racing controllers.
+
+The blue controller reports a successful pass with:
+
+```text
+OVERTAKE_COMPLETED - FOLLOW V5 FOR 10 LAPS
+```
+
+This message confirms the overtake, not the completion of ten laps.
+Check both timer terminals separately to confirm ten laps per vehicle.
+A `PASS_ABORT` message does not count as a successful overtake.
+
+### Stopping and Repeating the Run
+
+Press `Ctrl+C` in both controller terminals, then stop the remaining processes.
+
+Before another attempt, restart the simulator to restore the initial poses
+and restart both timers and both controllers in the order shown above.
