@@ -345,11 +345,11 @@ racing controllers, without further programmed overtaking attempts.
 
 ### Complete Ten-Lap Demonstration
 
-[Watch the complete two-vehicle run on YouTube](https://www.youtube.com/watch?v=gPK7UnPUaxw)
+[![Watch the complete two-vehicle run on YouTube](https://img.youtube.com/vi/gPK7UnPUaxw/hqdefault.jpg)](https://www.youtube.com/watch?v=gPK7UnPUaxw)
 
 ### Overtaking Highlight
 
-[Watch the short overtaking demonstration on YouTube](https://www.youtube.com/watch?v=um2SPaPDZ5k)
+[![Watch the short overtaking demonstration on YouTube](https://img.youtube.com/vi/um2SPaPDZ5k/hqdefault.jpg)](https://www.youtube.com/watch?v=um2SPaPDZ5k)
 
 ### Overtaking Confirmation
 
