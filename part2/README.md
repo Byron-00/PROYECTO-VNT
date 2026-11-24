@@ -332,3 +332,31 @@ The test provides evidence of ten completed laps
 on the modified racing circuit.
 
 <!-- STATIC RACE EVIDENCE END -->
+
+---
+
+<!-- final-part2-evidence:start -->
+## Final Validation — Two Vehicles and Successful Overtaking
+
+The final demonstration shows both autonomous vehicles completing ten laps
+on the Sakhir circuit, including a successful initial overtake by the blue
+vehicle. After the maneuver, both vehicles continue with their normal
+racing controllers, without further programmed overtaking attempts.
+
+### Complete Ten-Lap Demonstration
+
+[Watch the complete two-vehicle run on YouTube](https://www.youtube.com/watch?v=gPK7UnPUaxw)
+
+### Overtaking Highlight
+
+[Watch the short overtaking demonstration on YouTube](https://www.youtube.com/watch?v=um2SPaPDZ5k)
+
+### Overtaking Confirmation
+
+The following terminal screenshot records the successful overtaking confirmation.
+
+![Successful overtaking confirmation](../media/part2/Adelantamiento%20exitoso.png)
+
+The video documents the complete run; the terminal screenshot supports
+the overtaking result. Earlier pending entries describe previous development stages.
+<!-- final-part2-evidence:end -->
