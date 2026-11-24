@@ -1,6 +1,6 @@
 # F1TENTH Autonomous Racing — Part 2
 
-## Static Obstacle Avoidance and Autonomous Overtaking
+## 1. Static Obstacle Avoidance and Autonomous Overtaking
 
 **Author:** Byron Ortega  
 **Project:** PROYECTO-VNT  
@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Project Overview
+## 2. Project Overview
 
 Part 2 extends the autonomous racing system
 developed during Part 1.
@@ -31,7 +31,7 @@ the starting point for further development.
 
 ---
 
-## 2. Competition Requirements
+## 3. Competition Requirements
 
 ### Trial 1 — Static Obstacle Challenge
 
@@ -64,7 +64,7 @@ laps without collisions**.
 
 ---
 
-## 3. Development Environment
+## 4. Development Environment
 
 The project uses:
 
@@ -84,7 +84,7 @@ The simulation installation tutorial is available at:
 
 ---
 
-## 4. Development Strategy
+## 5. Development Strategy
 
 The project will be developed and validated
 through independent stages.
@@ -106,7 +106,7 @@ be marked as successful.
 
 ---
 
-## 5. Static Obstacle Implementation
+## 6. Static Obstacle Implementation
 
 ### Original Sakhir Configuration
 
@@ -136,23 +136,11 @@ A separate working copy was created:
 The original map and simulator configuration
 remain unchanged.
 
-**Current status:** Map preparation completed.
 Obstacle placement and simulation validation
 are pending.
 
 
 
-This section will document:
-
-- Original map preservation.
-- Modified Sakhir map generation.
-- Obstacle dimensions and positions.
-- LiDAR obstacle detection.
-- Controller adjustments.
-- Simulation screenshots.
-- Ten-lap validation results.
-
-**Status:** Not yet tested.
 
 ---
 
@@ -190,47 +178,11 @@ with the first obstacle loaded into RViz.
 The original Sakhir map and the Part 1 controller
 were preserved.
 
-**Current status:** Obstacle placement and map
 visualization completed. LiDAR detection and
 collision-free avoidance remain to be validated.
 
-## 6. Two-Vehicle Racing System
+## 7. Two-Vehicle Racing System
 
-This section will document:
-
-- Two-agent simulator configuration.
-- Vehicle starting positions.
-- Five-meter initial separation.
-- ROS 2 topic configuration.
-- Independent autonomous controllers.
-- Dynamic obstacle detection.
-- Safe overtaking maneuvers.
-
-**Status:** Not yet tested.
-
----
-
-## 7. Advanced RViz Visualization
-
-A dual-vehicle visualization system is planned.
-
-| Element | Display |
-|---|---|
-| Primary vehicle | Green trajectory |
-| Opponent vehicle | Orange trajectory |
-| Start/finish line | Visual race marker |
-| Vehicle speed | Floating telemetry |
-| Lap number | Independent lap counters |
-| Lap times | Current, last, and best |
-| Vehicle separation | Distance indicator |
-
-Each trajectory will reset when its
-corresponding vehicle completes a lap.
-
-The visualization will operate independently
-from the autonomous driving controllers.
-
-**Status:** Planned.
 
 ---
 
@@ -259,44 +211,7 @@ after their corresponding tests are completed.
 
 ---
 
-## 9. Testing and Results
-
-| Test | Result | Evidence |
-|---|---|---|
-| Original map baseline | Pending | Pending |
-| Five static obstacles | Pending | Pending |
-| Ten laps with obstacles | Pending | Pending |
-| Two-vehicle simulation | Pending | Pending |
-| Autonomous overtaking | Pending | Pending |
-| Ten laps with both cars | Pending | Pending |
-
-Actual results and measured times will
-be added after testing.
-
----
-
-## 10. Development Progress
-
-The detailed engineering log is available here:
-
-[Part 2 Development Log](../docs/part2/PROGRESS.md)
-
----
-
-## 11. References
-
-- [F1TENTH Official Website](https://f1tenth.org/)
-- [F1TENTH Gym](https://github.com/f1tenth/f1tenth_gym)
-- [F1TENTH Gym ROS](https://github.com/f1tenth/f1tenth_gym_ros)
-- [ROS 2 Humble](https://docs.ros.org/en/humble/)
-
----
-
-**Developed by Byron Ortega — PROYECTO-VNT**
-
-<!-- STATIC RACE EVIDENCE START -->
-
-## Static Obstacle Challenge — Ten-Lap Results
+## 9. Static Obstacle Challenge — Ten-Lap Results
 
 ### Autonomous Navigation — Lap 6
 
@@ -336,7 +251,7 @@ on the modified racing circuit.
 ---
 
 <!-- final-part2-evidence:start -->
-## Final Validation — Two Vehicles and Successful Overtaking
+## 10. Final Validation — Two Vehicles and Successful Overtaking
 
 The final demonstration shows both autonomous vehicles completing ten laps
 on the Sakhir circuit, including a successful initial overtake by the blue
@@ -358,5 +273,11 @@ The following terminal screenshot records the successful overtaking confirmation
 ![Successful overtaking confirmation](../media/part2/Adelantamiento%20exitoso.png)
 
 The video documents the complete run; the terminal screenshot supports
-the overtaking result. Earlier pending entries describe previous development stages.
+the overtaking result. 
 <!-- final-part2-evidence:end -->
+
+## 11. Project Folder Structure
+
+The following image shows the Part 2 directories and the shared controller package.
+
+![Part 2 project folder structure](../media/part2/10-project-structure.png)
