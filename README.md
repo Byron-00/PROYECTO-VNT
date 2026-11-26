@@ -379,3 +379,46 @@ a separate README.
 ### [View Part 2 — Complete Documentation](part2/README.md)
 
 **Developed by Byron Ortega — PROYECTO-VNT**
+
+---
+
+<!-- part1-rosbag-download -->
+## 14. Part 1 — ROS 2 Bagfiles
+
+[Download the Part 1 recording from Google Drive](https://drive.google.com/drive/folders/17zs5ZB8MjkwB38ZN_BjPSFo27dw8X_rb)
+
+This recording contains telemetry from a single autonomous vehicle
+running on the original Sakhir map.
+
+| Property | Value |
+| --- | --- |
+| Recording | `one_car_20261126_144037` |
+| Date | November 26, 2026 |
+| Duration | Approximately 20 minutes 45 seconds |
+| Uncompressed bag size | Approximately 1.6 GiB |
+| Storage format | SQLite3 |
+| Total messages | 911,301 |
+
+### Recorded Topics
+
+- `/scan`: LiDAR measurements — 309,671 messages.
+- `/ego_racecar/odom`: position, orientation and velocities — 309,669 messages.
+- `/drive`: Ackermann driving commands — 291,961 messages.
+
+### Download and Inspect
+
+Download the complete folder. Keep `metadata.yaml` and all `.db3`
+files together. If Google Drive provides a ZIP archive, extract it first.
+
+ROS 2 Humble and the project's message dependencies are required
+to inspect or process the recording. In an Ubuntu terminal, run:
+
+    source /opt/ros/humble/setup.bash
+    ros2 bag info /path/to/one_car_20261126_144037
+
+Replace `/path/to/` with the actual download location.
+
+The rosbag contains recorded messages; it does not install or launch
+the simulator. Lap completion is evaluated separately using the lap timer.
+
+The recording is hosted externally because of its size.
