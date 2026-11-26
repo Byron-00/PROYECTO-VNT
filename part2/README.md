@@ -404,3 +404,44 @@ Press `Ctrl+C` in both controller terminals, then stop the remaining processes.
 
 Before another attempt, restart the simulator to restore the initial poses
 and restart both timers and both controllers in the order shown above.
+
+---
+
+<!-- part2-rosbag-download -->
+## 13. ROS 2 Bagfiles
+
+[Download the Part 2 recording from Google Drive](https://drive.google.com/drive/folders/1mSNaIIK1uclzvixslcnynUkVGrrng0dr)
+
+This recording contains telemetry from both vehicles during the
+two-vehicle experiment on Sakhir.
+
+| Property | Value |
+| --- | --- |
+| Recording | `two_cars_20261126_133457` |
+| Date | November 26, 2026 |
+| Duration | Approximately 21 minutes 47 seconds |
+| Uncompressed bag size | Approximately 3.1 GiB |
+| Storage format | SQLite3 |
+| Total messages | 1,593,080 |
+| Initial overtaking signal | Verified as `True` |
+
+### Recorded Topics
+
+- `/scan`: blue vehicle LiDAR.
+- `/ego_racecar/odom`: blue vehicle odometry.
+- `/drive`: blue vehicle driving commands.
+- `/opp_scan`: orange vehicle LiDAR.
+- `/opp_racecar/odom`: orange vehicle odometry.
+- `/opp_drive`: orange vehicle driving commands.
+- `/sakhir/initial_pass_done`: initial overtaking result.
+
+The overtaking signal confirms the controller's pass condition.
+Lap completion is evaluated separately using the lap timers.
+
+### Download Instructions
+
+Download the complete folder from Google Drive. Keep `metadata.yaml`
+and all `.db3` files together. If downloaded as a ZIP archive,
+extract it before inspecting the recording with ROS 2.
+
+The bagfiles are hosted externally because of their size.
