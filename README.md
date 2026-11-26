@@ -361,27 +361,6 @@ and displayed lap times.
 
 ---
 
-# Part 2 — Static Obstacles and Autonomous Overtaking
-
-The second stage of this project introduces
-five static obstacles and a second autonomous
-racing vehicle.
-
-It focuses on reactive obstacle avoidance,
-safe overtaking, independent vehicle control,
-and advanced RViz telemetry.
-
-The complete technical documentation,
-development process, screenshots, and
-experimental results are maintained in
-a separate README.
-
-### [View Part 2 — Complete Documentation](part2/README.md)
-
-**Developed by Byron Ortega — PROYECTO-VNT**
-
----
-
 <!-- part1-rosbag-download -->
 ## 14. Part 1 — ROS 2 Bagfiles
 
@@ -422,3 +401,24 @@ The rosbag contains recorded messages; it does not install or launch
 the simulator. Lap completion is evaluated separately using the lap timer.
 
 The recording is hosted externally because of its size.
+
+---
+
+# Part 2 — Static Obstacles and Autonomous Overtaking
+
+The second stage of this project introduces
+five static obstacles and a second autonomous
+racing vehicle.
+
+It focuses on reactive obstacle avoidance,
+safe overtaking, independent vehicle control,
+and advanced RViz telemetry.
+
+The complete technical documentation,
+development process, screenshots, and
+experimental results are maintained in
+a separate README.
+
+### [View Part 2 — Complete Documentation](part2/README.md)
+
+**Developed by Byron Ortega — PROYECTO-VNT**
