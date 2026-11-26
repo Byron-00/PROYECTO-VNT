@@ -445,3 +445,72 @@ and all `.db3` files together. If downloaded as a ZIP archive,
 extract it before inspecting the recording with ROS 2.
 
 The bagfiles are hosted externally because of their size.
+
+---
+
+<!-- part2-motion-csv -->
+## 14. CSV Data Exports
+
+The recording folder on Google Drive includes a `csv` subfolder
+with motion and driving-command data from both vehicles.
+
+[Open the Part 2 recording folder and its csv subfolder](https://drive.google.com/drive/folders/1mSNaIIK1uclzvixslcnynUkVGrrng0dr)
+
+| CSV file | Vehicle | Source topic | Data rows |
+| --- | --- | --- | --- |
+| `ego_racecar_odom.csv` | Blue | `/ego_racecar/odom` | 298,209 |
+| `drive.csv` | Blue | `/drive` | 188,357 |
+| `opp_racecar_odom.csv` | Orange | `/opp_racecar/odom` | 298,210 |
+| `opp_drive.csv` | Orange | `/opp_drive` | 211,878 |
+
+Row counts exclude the column-header row and match the message
+counts reported by the original rosbag.
+
+### Data Description
+
+Odometry exports include position, quaternion orientation, yaw,
+linear velocity, speed magnitude and angular velocity.
+
+Driving-command exports include steering angle, steering-angle
+velocity, commanded speed, commanded acceleration and commanded jerk.
+Commanded values are distinct from measured vehicle motion.
+
+Positions are expressed in metres, linear velocities in metres per
+second, and angles in radians.
+
+Each CSV includes:
+
+- `bag_time_ns`: the rosbag message timestamp in nanoseconds.
+- `elapsed_s`: seconds since the beginning of the recording.
+- `header_time_ns`: the timestamp from the message header.
+
+The recording timestamp and message-header timestamp may use different
+time references. `elapsed_s` uses a common recording origin across
+the exported topics; it is not an individual lap timer.
+
+These CSV files contain selected motion and control fields.
+Complete LiDAR messages remain in the original rosbag.
+
+### Export Program
+
+The reusable exporter is included at:
+
+`scripts/analysis/export_motion_csv.py`
+
+It reads SQLite3 rosbag files directly and exports odometry and
+Ackermann driving-command topics without running the simulation.
+
+ROS 2 Humble and the required message packages must be available.
+For the workspace and recording locations used in this project:
+
+    source /opt/ros/humble/setup.bash
+    source ~/F1Tenth-Repository/install/setup.bash
+    source ~/PROYECTO-VNT/install/setup.bash
+    cd ~/PROYECTO-VNT
+    python3 scripts/analysis/export_motion_csv.py \
+      "$HOME/rosbags/PROYECTO-VNT/part2/two_cars_20261126_133457" \
+      "$HOME/rosbags/PROYECTO-VNT/csv/part2/two_cars_20261126_133457"
+
+The output directory must not already exist. The exporter refuses
+to overwrite existing exports. Adapt the paths if your recording
+or workspaces are stored elsewhere.
