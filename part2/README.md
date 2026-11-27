@@ -514,3 +514,21 @@ For the workspace and recording locations used in this project:
 The output directory must not already exist. The exporter refuses
 to overwrite existing exports. Adapt the paths if your recording
 or workspaces are stored elsewhere.
+
+---
+<!-- recorded-videos:start -->
+## 15. Recorded Data
+
+### Video 1 — Part 1: Single-Vehicle Racing
+
+Ten-lap autonomous racing demonstration on the Sakhir circuit.
+
+[Watch Video 1 on YouTube](https://www.youtube.com/watch?v=TFbscId3P24)
+
+### Video 2 — Part 2: Two-Vehicle Racing and Overtaking
+
+Ten-lap demonstration with both autonomous vehicles, including
+the initial overtaking maneuver.
+
+[Watch Video 2 on YouTube](https://www.youtube.com/watch?v=gPK7UnPUaxw)
+<!-- recorded-videos:end -->
